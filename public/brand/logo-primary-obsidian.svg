@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 140" role="img" aria-labelledby="title">
+  <title id="title">Chef Mani Bista logo in obsidian</title>
+  <g transform="translate(10 20) scale(0.8333)">
+    <circle cx="60" cy="60" r="56" fill="none" stroke="#0B0B0B" stroke-width="1.2" opacity="0.45"/>
+    <g fill="none" stroke="#0B0B0B" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20 84V34l24 32 24-32v50"/>
+      <path d="M82 84V34h9c8 0 13 5 13 13s-5 13-13 13h-9"/>
+      <path d="M82 60h9c8 0 14 5 14 12s-6 12-14 12h-9"/>
+    </g>
+    <circle cx="97" cy="24" r="3" fill="#B87333"/>
+  </g>
+  <text x="130" y="42" font-family="Manrope, Arial, sans-serif" font-size="11" font-weight="600" letter-spacing="7" fill="#B87333">CHEF</text>
+  <text x="128" y="92" font-family="'Bodoni Moda', Didot, 'Bodoni 72', 'Times New Roman', serif" font-size="52" letter-spacing="3" fill="#0B0B0B">MANI BISTA</text>
+  <text x="131" y="116" font-family="Manrope, Arial, sans-serif" font-size="9" letter-spacing="5" fill="#B87333">KATHMANDU · NEPAL</text>
+</svg>

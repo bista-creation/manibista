@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-labelledby="title">
+  <title id="title">Chef Mani Bista stacked logo</title>
+  <g transform="translate(140 20) scale(1)">
+    <circle cx="60" cy="60" r="56" fill="none" stroke="#D4AF37" stroke-width="1.2" opacity="0.45"/>
+    <g fill="none" stroke="#D4AF37" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20 84V34l24 32 24-32v50"/>
+      <path d="M82 84V34h9c8 0 13 5 13 13s-5 13-13 13h-9"/>
+      <path d="M82 60h9c8 0 14 5 14 12s-6 12-14 12h-9"/>
+    </g>
+    <circle cx="97" cy="24" r="3" fill="#FF7A00"/>
+  </g>
+  <text x="200" y="190" text-anchor="middle" font-family="Manrope, Arial, sans-serif" font-size="10" font-weight="600" letter-spacing="7" fill="#D4AF37">CHEF</text>
+  <text x="200" y="238" text-anchor="middle" font-family="'Bodoni Moda', Didot, 'Bodoni 72', 'Times New Roman', serif" font-size="40" letter-spacing="3" fill="#FDF6EC">MANI BISTA</text>
+  <text x="200" y="262" text-anchor="middle" font-family="Manrope, Arial, sans-serif" font-size="8" letter-spacing="5" fill="#D4AF37">KATHMANDU · NEPAL</text>
+</svg>
