@@ -2,11 +2,13 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
-import { navigation, siteConfig, whatsappLink } from "@/lib/site";
-import { Logo } from "./logo";
+import { mailtoLink, navigation, siteConfig, whatsappLink } from "@/lib/site";
+import { Logo, LogoMark } from "./logo";
 import { ArrowUpRight, CloseIcon, MenuIcon, WhatsAppIcon } from "./icons";
+
+const mobileNavigation = navigation.filter((item) => item.href !== "/reserve");
 
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
@@ -14,6 +16,15 @@ export function SiteHeader() {
   const pathname = usePathname();
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  const closeMenu = useCallback((restoreFocus = false) => {
+    if (restoreFocus) {
+      menuButtonRef.current?.focus();
+    }
+
+    setOpen(false);
+  }, []);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -29,24 +40,73 @@ export function SiteHeader() {
   useEffect(() => {
     window.dispatchEvent(new CustomEvent("cb:menu", { detail: open }));
 
-    if (open) {
-      closeButtonRef.current?.focus();
+    return () => {
+      if (open) {
+        window.dispatchEvent(new CustomEvent("cb:menu", { detail: false }));
+      }
+    };
+  }, [open]);
+
+  useEffect(() => {
+    if (!open) return;
+
+    const body = document.body;
+    const previousOverflow = body.style.overflow;
+    const previousPaddingRight = body.style.paddingRight;
+    const scrollbarWidth =
+      window.innerWidth - document.documentElement.clientWidth;
+
+    body.style.overflow = "hidden";
+    if (scrollbarWidth > 0) {
+      body.style.paddingRight = `${scrollbarWidth}px`;
     }
 
-    const onKey = (event: KeyboardEvent) => {
+    closeButtonRef.current?.focus();
+
+    const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
-        setOpen(false);
-        menuButtonRef.current?.focus();
+        event.preventDefault();
+        closeMenu(true);
+        return;
+      }
+
+      if (event.key !== "Tab" || !menuRef.current) return;
+
+      const focusable = Array.from(
+        menuRef.current.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
+        ),
+      ).filter((element) => element.offsetParent !== null);
+
+      if (focusable.length === 0) return;
+
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
       }
     };
 
-    window.addEventListener("keydown", onKey);
+    const desktopQuery = window.matchMedia("(min-width: 1024px)");
+    const onDesktop = (event: MediaQueryListEvent) => {
+      if (event.matches) closeMenu();
+    };
+
+    document.addEventListener("keydown", onKeyDown);
+    desktopQuery.addEventListener("change", onDesktop);
 
     return () => {
-      window.removeEventListener("keydown", onKey);
-      window.dispatchEvent(new CustomEvent("cb:menu", { detail: false }));
+      body.style.overflow = previousOverflow;
+      body.style.paddingRight = previousPaddingRight;
+      document.removeEventListener("keydown", onKeyDown);
+      desktopQuery.removeEventListener("change", onDesktop);
     };
-  }, [open]);
+  }, [open, closeMenu]);
 
   return (
     <>
@@ -96,6 +156,7 @@ export function SiteHeader() {
             className="menu-button lg:hidden"
             aria-expanded={open}
             aria-controls="mobile-menu"
+            aria-haspopup="dialog"
             aria-label={open ? "Close menu" : "Open menu"}
             onClick={() => setOpen((value) => !value)}
           >
@@ -108,72 +169,135 @@ export function SiteHeader() {
         </div>
       </header>
 
-      {open ? (
-        <div
-          id="mobile-menu"
-          className="mobile-menu is-open lg:hidden"
-          role="dialog"
-          aria-modal="true"
-          aria-label="Mobile navigation"
-        >
-          <div className="container-luxe flex h-full flex-col justify-between py-8">
-            <div className="flex justify-end">
-              <button
-                ref={closeButtonRef}
-                type="button"
-                onClick={() => {
-                  setOpen(false);
-                  menuButtonRef.current?.focus();
-                }}
-                className="menu-button"
-                aria-label="Close menu"
-              >
-                <CloseIcon className="h-5 w-5" />
-              </button>
-            </div>
+      <div
+        ref={menuRef}
+        id="mobile-menu"
+        className={cn("mobile-menu lg:hidden", open && "is-open")}
+        role="dialog"
+        aria-modal="true"
+        aria-label="Site menu"
+        aria-hidden={!open}
+        inert={!open}
+        data-lenis-prevent
+      >
+        <div className="mobile-menu-atmosphere" aria-hidden="true">
+          <LogoMark className="mobile-menu-watermark" />
+        </div>
 
-            <nav className="flex flex-col gap-2" aria-label="Mobile navigation">
-              {navigation.map((item, index) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="mobile-menu-link flex items-baseline gap-4"
-                  onClick={() => setOpen(false)}
-                >
-                  <span className="font-mono text-[0.55rem] tracking-[0.3em] text-gold/60">
-                    0{index + 1}
-                  </span>
-                  {item.label}
-                </Link>
-              ))}
+        <div className="mobile-menu-shell container-luxe">
+          <div className="mobile-menu-top">
+            <Link
+              href="/"
+              className="mobile-menu-brand"
+              aria-label="Chef Mani Bista — home"
+              onClick={() => closeMenu()}
+            >
+              <LogoMark className="h-10 w-10 shrink-0" />
+              <span className="mobile-menu-brand-text">
+                <span className="mobile-menu-brand-kicker">Chef</span>
+                <span className="mobile-menu-brand-name">Mani Bista</span>
+                <span className="mobile-menu-brand-place">
+                  Kathmandu · Nepal
+                </span>
+              </span>
+            </Link>
+
+            <button
+              ref={closeButtonRef}
+              type="button"
+              className="menu-button menu-button-close"
+              aria-label="Close menu"
+              onClick={() => closeMenu(true)}
+            >
+              <CloseIcon className="h-5 w-5" />
+            </button>
+          </div>
+
+          <div className="mobile-menu-body">
+            <p className="eyebrow mobile-menu-kicker">The experience</p>
+
+            <nav className="mobile-menu-nav" aria-label="Mobile navigation">
+              {mobileNavigation.map((item, index) => {
+                const active = pathname === item.href;
+
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className={cn("mobile-menu-link", active && "is-active")}
+                    aria-current={active ? "page" : undefined}
+                    onClick={() => closeMenu()}
+                  >
+                    <span className="mobile-menu-index">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <span className="mobile-menu-label">{item.label}</span>
+                    <span className="mobile-menu-arrow">
+                      <ArrowUpRight className="h-4 w-4" />
+                    </span>
+                  </Link>
+                );
+              })}
             </nav>
 
-            <div className="space-y-4 border-t border-line pt-6">
-              <p className="eyebrow">Kathmandu · Nepal · India</p>
+            <Link
+              href="/reserve"
+              className="btn btn-gold mobile-menu-cta"
+              onClick={() => closeMenu()}
+            >
+              Reserve the table
+              <ArrowUpRight className="h-4 w-4" />
+            </Link>
+          </div>
+
+          <div className="mobile-menu-foot">
+            <p className="eyebrow">Kathmandu · Nepal · India</p>
+
+            <div className="mobile-menu-contact">
               <a
                 href={whatsappLink()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="link-arrow"
+                className="mobile-menu-whatsapp"
+                onClick={() => closeMenu()}
               >
-                WhatsApp the chef <ArrowUpRight className="h-3.5 w-3.5" />
+                <WhatsAppIcon className="h-4 w-4" />
+                WhatsApp the chef
+                <ArrowUpRight className="h-3.5 w-3.5" />
               </a>
-              <a
-                href={`mailto:${siteConfig.email}`}
-                className="block text-sm text-cream/60"
-              >
+              <a href={mailtoLink()} onClick={() => closeMenu()}>
                 {siteConfig.email}
               </a>
               <a
                 href={`tel:${siteConfig.phone}`}
-                className="block text-sm text-cream/60"
+                onClick={() => closeMenu()}
               >
                 {siteConfig.phoneDisplay}
               </a>
             </div>
+
+            <div className="mobile-menu-meta">
+              <span>Private chef · By arrangement</span>
+              <span className="mobile-menu-socials">
+                <a
+                  href={siteConfig.socials.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Instagram
+                </a>
+                <a
+                  href={siteConfig.socials.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Facebook
+                </a>
+              </span>
+            </div>
           </div>
         </div>
-      ) : null}
+      </div>
     </>
   );
 }
