@@ -3,7 +3,7 @@ const configuredUrl = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "");
 export const siteConfig = {
   name: "Chef Mani Bista",
   shortName: "Mani Bista",
-  url: configuredUrl || "https://chefmanibista.com",
+  url: configuredUrl || "https://manibista.vercel.app",
   description:
     "The culinary world of Chef Mani Bista — a Kathmandu-based private chef blending Nepali soul with global technique. Private dining, chef's table experiences, and cooking sessions across Nepal and India.",
   email: "chefbista@gmail.com",

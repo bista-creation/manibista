@@ -38,10 +38,10 @@ Open [http://localhost:3000](http://localhost:3000).
 Copy `.env.example` to `.env.local` and set the public site URL:
 
 ```bash
-NEXT_PUBLIC_SITE_URL=https://chefmanibista.com
+NEXT_PUBLIC_SITE_URL=https://manibista.vercel.app
 ```
 
-The fallback is `https://chefmanibista.com`. Set this to the final domain before launch. Preview deployments are marked `noindex` through `proxy.ts` when `VERCEL_ENV` is not `production`.
+The fallback is `https://manibista.vercel.app`. Set this to the final domain before launch. Preview deployments should be marked `noindex` when `VERCEL_ENV` is not `production`.
 
 ## Content rules
 
