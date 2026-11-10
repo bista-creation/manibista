@@ -13,6 +13,7 @@ const routes = [
   "/blog",
   "/blog/how-to-open-a-successful-restaurant-in-nepal",
   "/blog/restaurant-startup-cost-in-nepal",
+  "/blog/restaurant-licence-fees-in-nepal",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

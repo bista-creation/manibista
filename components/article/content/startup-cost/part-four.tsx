@@ -85,6 +85,12 @@ const sources = [
     href: "https://ssf.gov.np/",
   },
   {
+    title: "Tourism Act, 2035",
+    publisher: "Nepal Law Commission",
+    date: "2035",
+    href: "https://lawcommission.gov.np/content/13301/tourism-ann--2035/",
+  },
+  {
     title: "Inland Revenue Department",
     publisher: "Government of Nepal",
     date: "2026",

@@ -93,6 +93,53 @@ export const startupCostGuide = {
   ],
 } as const;
 
+export const licenceFeesGuide = {
+  slug: "restaurant-licence-fees-in-nepal",
+  path: "/blog/restaurant-licence-fees-in-nepal",
+  title:
+    "Restaurant Licence Fees in Nepal: Official 2083/84 Guide (2026)",
+  description:
+    "Restaurant licence fees in Nepal for 2083/84, with official OCR, municipal, food, liquor and VAT sources, renewal rules and local verification checks.",
+  excerpt:
+    "A source-based guide to restaurant licence fees in Nepal: the official fees that are fixed, the local charges that are not, and the checks to run before paying.",
+  navLabel: "Restaurant Licence Fees in Nepal",
+  navDescription: "Official 2083/84 fees and renewals",
+  category: "Compliance Guide",
+  published: "2026-11-10",
+  updated: "2026-11-10",
+  readingMinutes: 33,
+  wordCount: 8100,
+  author: {
+    name: "Chef Mani Bista",
+    role: "Private chef · Kathmandu",
+    path: "/story",
+    image: images.portrait,
+  },
+  image: images.modern,
+  keywords: [
+    "restaurant licence fees in Nepal",
+    "restaurant registration in Nepal",
+    "restaurant food licence Nepal",
+    "liquor licence fee Nepal",
+    "restaurant tax rate Nepal",
+    "restaurant licence renewal Nepal",
+    "company registration fee Nepal",
+    "PAN registration Nepal",
+    "VAT registration Nepal restaurant",
+    "municipal business tax Nepal",
+    "Food Act 2081 restaurant",
+    "excise licence Nepal restaurant",
+    "foreign investment in Nepal restaurant",
+    "restaurant compliance Nepal",
+    "Kathmandu restaurant licence",
+    "Biratnagar restaurant licence",
+    "Dharan restaurant licence",
+    "Itahari restaurant licence",
+    "Pokhara restaurant licence",
+    "Sangurigadhi restaurant licence",
+  ],
+} as const;
+
 export const articleSections: ArticleSection[] = [
   {
     id: "industry",
@@ -327,7 +374,113 @@ export const startupCostSections: ArticleSection[] = [
   },
 ];
 
+export const licenceFeesSections: ArticleSection[] = [
+  {
+    id: "short-answer",
+    number: "01",
+    title: "The short answer: what restaurant licences cost in Nepal",
+    shortTitle: "The short answer",
+  },
+  {
+    id: "what-counts",
+    number: "02",
+    title: "What counts as a licence fee",
+    shortTitle: "What counts as a fee",
+  },
+  {
+    id: "method",
+    number: "03",
+    title: "How this guide was verified",
+    shortTitle: "Research method",
+  },
+  {
+    id: "company-pan",
+    number: "04",
+    title: "Company registration and PAN",
+    shortTitle: "Company and PAN",
+  },
+  {
+    id: "vat-tax",
+    number: "05",
+    title: "VAT registration and tax status",
+    shortTitle: "VAT and tax",
+  },
+  {
+    id: "municipal",
+    number: "06",
+    title: "Local business registration and municipal restaurant tax",
+    shortTitle: "Municipal tax",
+  },
+  {
+    id: "food-licence",
+    number: "07",
+    title: "Food business licence under the Food Act 2081",
+    shortTitle: "Food licence",
+  },
+  {
+    id: "liquor",
+    number: "08",
+    title: "Liquor licence fees under the Excise Rules",
+    shortTitle: "Liquor licence",
+  },
+  {
+    id: "tourism-fire",
+    number: "09",
+    title: "Tourism, star classification, music and fire safety",
+    shortTitle: "Tourism and safety",
+  },
+  {
+    id: "labour",
+    number: "10",
+    title: "Labour and social-security registration",
+    shortTitle: "Labour and SSF",
+  },
+  {
+    id: "foreign-investment",
+    number: "11",
+    title: "Foreign investment and restaurant licensing",
+    shortTitle: "Foreign investment",
+  },
+  {
+    id: "cost-types",
+    number: "12",
+    title: "One-time, annual and renewal costs",
+    shortTitle: "Cost types",
+  },
+  {
+    id: "cities",
+    number: "13",
+    title: "City-by-city verification: six local levels",
+    shortTitle: "City verification",
+  },
+  {
+    id: "mistakes",
+    number: "14",
+    title: "Common overcharging and compliance mistakes",
+    shortTitle: "Common mistakes",
+  },
+  {
+    id: "renewal-calendar",
+    number: "15",
+    title: "Renewal calendar and document file",
+    shortTitle: "Renewal calendar",
+  },
+  {
+    id: "faq",
+    number: "16",
+    title: "Frequently asked questions",
+    shortTitle: "FAQ",
+  },
+  {
+    id: "sources",
+    number: "17",
+    title: "Sources and further reading",
+    shortTitle: "Sources",
+  },
+];
+
 export const publishedArticles = [
+  licenceFeesGuide,
   startupCostGuide,
   restaurantGuide,
 ] as const;

@@ -113,7 +113,7 @@ export function StartupCostPartThree() {
             [
               "Tourism licence or star classification",
               "Ministry of Tourism; Nepal Tourism Board",
-              "Tourism Act 2039 and classification rules",
+              "Tourism Act 2035 and classification rules",
               "Only for tourist-standard or star-rated establishments",
               "Confirm the applicable category and fee",
             ],

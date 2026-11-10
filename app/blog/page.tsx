@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   articleSections,
+  licenceFeesGuide,
+  licenceFeesSections,
   restaurantGuide,
   startupCostGuide,
   startupCostSections,
@@ -18,7 +20,7 @@ import { ArrowRight, ArrowUpRight } from "@/components/icons";
 export const metadata: Metadata = buildMetadata({
   title: "The Journal | Restaurant Business Guides | Chef Mani Bista",
   description:
-    "Practical, source-based guides to opening and costing a restaurant in Nepal — from startup investment models to licensing, staffing, and the first 90 days.",
+    "Source-based guides to opening, licensing, and costing a restaurant in Nepal — from official 2083/84 licence fees to startup budgets and the first 90 days.",
   path: "/blog",
   image: images.atWork.src,
   imageAlt: images.atWork.alt,
@@ -26,6 +28,7 @@ export const metadata: Metadata = buildMetadata({
   imageHeight: images.atWork.height,
   keywords: [
     "restaurant business Nepal",
+    "restaurant licence fees in Nepal",
     "restaurant startup cost Nepal",
     "how to open a restaurant in Nepal",
     "Chef Mani Bista journal",
@@ -68,13 +71,13 @@ export default function BlogIndexPage() {
 
           <article className="journal-featured">
             <Link
-              href={startupCostGuide.path}
+              href={licenceFeesGuide.path}
               className="journal-featured-media"
-              aria-label={startupCostGuide.title}
+              aria-label={licenceFeesGuide.title}
             >
               <Image
-                src={startupCostGuide.image.src}
-                alt={startupCostGuide.image.alt}
+                src={licenceFeesGuide.image.src}
+                alt={licenceFeesGuide.image.alt}
                 fill
                 priority
                 sizes="(max-width: 1024px) 92vw, 58vw"
@@ -82,29 +85,29 @@ export default function BlogIndexPage() {
               />
               <span className="journal-featured-shade" aria-hidden="true" />
               <span className="journal-featured-badge">
-                {startupCostGuide.category}
+                {licenceFeesGuide.category}
               </span>
             </Link>
 
             <div className="journal-featured-body">
-              <p className="eyebrow">2026 investment breakdown</p>
+              <p className="eyebrow">Official 2083/84 guide</p>
               <h2 className="display journal-featured-title">
-                <Link href={startupCostGuide.path}>
-                  Restaurant Startup Cost in Nepal
+                <Link href={licenceFeesGuide.path}>
+                  Restaurant Licence Fees in Nepal
                 </Link>
               </h2>
               <p className="journal-featured-copy">
-                {startupCostGuide.excerpt}
+                {licenceFeesGuide.excerpt}
               </p>
 
               <div className="journal-meta">
-                <span>{startupCostGuide.readingMinutes} min read</span>
-                <span>Published {formatDate(startupCostGuide.published)}</span>
-                <span>{startupCostSections.length} sections</span>
+                <span>{licenceFeesGuide.readingMinutes} min read</span>
+                <span>Published {formatDate(licenceFeesGuide.published)}</span>
+                <span>{licenceFeesSections.length} sections</span>
               </div>
 
-              <Link href={startupCostGuide.path} className="btn btn-gold">
-                Read the cost guide
+              <Link href={licenceFeesGuide.path} className="btn btn-gold">
+                Read the licence guide
                 <ArrowRight className="arrow h-4 w-4" />
               </Link>
             </div>
@@ -117,13 +120,41 @@ export default function BlogIndexPage() {
           <div className="journal-section-head">
             <p className="eyebrow">Also published</p>
             <p className="journal-section-note">
-              The operating guide that sits alongside the investment model.
+              The investment model and the operating guide that sit alongside
+              the licence file.
             </p>
           </div>
 
           <div className="journal-grid">
             <article className="journal-card">
               <p className="journal-card-index">01</p>
+              <p className="journal-card-category">
+                {startupCostGuide.category}
+              </p>
+              <h2 className="journal-card-title">
+                <Link
+                  href={startupCostGuide.path}
+                  className="journal-card-link"
+                >
+                  Restaurant Startup Cost in Nepal
+                </Link>
+              </h2>
+              <p className="journal-card-copy">{startupCostGuide.excerpt}</p>
+              <div className="journal-meta journal-card-meta">
+                <span>{startupCostGuide.readingMinutes} min read</span>
+                <span>{startupCostSections.length} sections</span>
+              </div>
+              <Link
+                href={startupCostGuide.path}
+                className="journal-card-cta"
+              >
+                Read the cost guide
+                <ArrowRight className="h-3.5 w-3.5" />
+              </Link>
+            </article>
+
+            <article className="journal-card">
+              <p className="journal-card-index">02</p>
               <p className="journal-card-category">
                 {restaurantGuide.category}
               </p>
@@ -144,25 +175,8 @@ export default function BlogIndexPage() {
                 href={restaurantGuide.path}
                 className="journal-card-cta"
               >
-                Read the guide
+                Read the operating guide
                 <ArrowRight className="h-3.5 w-3.5" />
-              </Link>
-            </article>
-
-            <article className="journal-card journal-card-note">
-              <p className="journal-card-index">02</p>
-              <p className="journal-card-category">How to use the Journal</p>
-              <h2 className="journal-card-title">
-                Start with the model, then pressure-test the plan.
-              </h2>
-              <p className="journal-card-copy">
-                The cost guide shows what the project takes. The operating guide
-                shows how to open it without losing the standard, the team, or
-                the cash.
-              </p>
-              <Link href="/blog" className="journal-card-cta">
-                Browse all guides
-                <ArrowUpRight className="h-3.5 w-3.5" />
               </Link>
             </article>
           </div>
@@ -225,9 +239,15 @@ export default function BlogIndexPage() {
         data={blogSchema({
           title: "The Journal | Chef Mani Bista",
           description:
-            "Practical, source-based guides to opening and costing a restaurant in Nepal.",
+            "Source-based guides to opening, licensing, and costing a restaurant in Nepal.",
           path: "/blog",
           posts: [
+            {
+              title: licenceFeesGuide.title,
+              path: licenceFeesGuide.path,
+              description: licenceFeesGuide.description,
+              datePublished: licenceFeesGuide.published,
+            },
             {
               title: startupCostGuide.title,
               path: startupCostGuide.path,

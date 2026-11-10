@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import {
+  licenceFeesGuide,
   restaurantGuide,
   startupCostGuide,
   startupCostSections,
-  upcomingArticles,
 } from "@/lib/articles";
 import { images } from "@/lib/images";
 import { articleSchema, faqSchema } from "@/lib/schema";
@@ -219,8 +219,9 @@ export default function StartupCostGuidePage() {
                   Related reading
                 </h2>
                 <p>
-                  The budget is one half of the decision. The operating plan is
-                  the other. These guides go deeper on both.
+                  The budget is one half of the decision. The licence file and
+                  the operating plan are the other. These guides go deeper on
+                  all three.
                 </p>
               </div>
 
@@ -246,21 +247,36 @@ export default function StartupCostGuidePage() {
                     href={restaurantGuide.path}
                     className="article-related-link"
                   >
-                    Read the guide
+                    Read the operating guide
                     <ArrowRight className="h-3.5 w-3.5" />
                   </Link>
                 </article>
 
-                {upcomingArticles.slice(0, 1).map((item) => (
-                  <article className="article-related-card" key={item.title}>
-                    <p className="article-related-category">{item.category}</p>
-                    <h3 className="article-related-card-title">{item.title}</h3>
-                    <p className="article-related-card-copy">
-                      {item.description}
-                    </p>
-                    <p className="article-related-status">In preparation</p>
-                  </article>
-                ))}
+                <article className="article-related-card">
+                  <p className="article-related-category">
+                    {licenceFeesGuide.category}
+                  </p>
+                  <h3 className="article-related-card-title">
+                    <Link
+                      href={licenceFeesGuide.path}
+                      className="article-related-card-link"
+                    >
+                      {licenceFeesGuide.navLabel}
+                    </Link>
+                  </h3>
+                  <p className="article-related-card-copy">
+                    Official 2083/84 fees for company registration, municipal
+                    business tax, food licensing, liquor excise and renewals,
+                    with the local gaps clearly marked.
+                  </p>
+                  <Link
+                    href={licenceFeesGuide.path}
+                    className="article-related-link"
+                  >
+                    Read the licence guide
+                    <ArrowRight className="h-3.5 w-3.5" />
+                  </Link>
+                </article>
               </div>
 
               <Link href="/blog" className="btn btn-ghost">
