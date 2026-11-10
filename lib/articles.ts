@@ -52,7 +52,7 @@ export const startupCostGuide = {
   title:
     "Restaurant Startup Cost in Nepal: Complete Investment Breakdown (2026)",
   description:
-    "Plan a restaurant in Nepal with five 2026 investment models, real cost ranges, rent, fit-out, equipment, licensing, working capital, and break-even math.",
+    "Restaurant licence fees in Nepal, official tax and municipal sources, commercial kitchen equipment evidence, and five 2026 startup cost models.",
   excerpt:
     "Five detailed 2026 investment models for a café, neighbourhood restaurant, family restaurant, premium casual room, and fine-dining room — with the numbers behind each.",
   navLabel: "Restaurant Startup Cost in Nepal",
@@ -60,8 +60,8 @@ export const startupCostGuide = {
   category: "Investment Guide",
   published: "2026-11-10",
   updated: "2026-11-10",
-  readingMinutes: 58,
-  wordCount: 14500,
+  readingMinutes: 70,
+  wordCount: 17500,
   author: {
     name: "Chef Mani Bista",
     role: "Private chef · Kathmandu",
@@ -70,6 +70,14 @@ export const startupCostGuide = {
   },
   image: images.atWork,
   keywords: [
+    "restaurant licence fees in Nepal",
+    "restaurant registration in Nepal",
+    "restaurant food licence Nepal",
+    "liquor licence fee Nepal",
+    "restaurant tax rate Nepal",
+    "foreign investment in Nepal restaurant",
+    "commercial kitchen equipment price Nepal",
+    "restaurant equipment suppliers Nepal",
     "restaurant startup cost in Nepal",
     "cost to open a restaurant in Nepal",
     "restaurant investment Nepal",
@@ -236,8 +244,8 @@ export const startupCostSections: ArticleSection[] = [
   {
     id: "kitchen",
     number: "08",
-    title: "Commercial kitchen planning and equipment",
-    shortTitle: "Kitchen and equipment",
+    title: "Real Commercial Kitchen Equipment Prices in Nepal",
+    shortTitle: "Kitchen equipment prices",
   },
   {
     id: "refrigeration-ventilation-fire",
@@ -254,8 +262,8 @@ export const startupCostSections: ArticleSection[] = [
   {
     id: "compliance",
     number: "11",
-    title: "Registration, licensing, and compliance",
-    shortTitle: "Registration and licensing",
+    title: "Government Licences, Tax and Regulatory Costs for Restaurants in Nepal",
+    shortTitle: "Licences, tax and regulation",
   },
   {
     id: "technology",

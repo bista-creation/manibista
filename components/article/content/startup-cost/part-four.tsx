@@ -19,12 +19,6 @@ const sources = [
     href: "https://giwmscdnone.gov.np/media/pdf_upload/Hotel%20and%20restaurant%20final%20report_vyvvh6g.pdf",
   },
   {
-    title: "National Hotel and Restaurant Survey 2023/24 — microdata catalogue",
-    publisher: "National Statistics Office",
-    date: "2024",
-    href: "https://microdata.nsonepal.gov.np/index.php/catalog/150",
-  },
-  {
     title: "Nepal Tourism Insights — December 2025",
     publisher: "Nepal Tourism Board",
     date: "January 2026",
@@ -67,46 +61,22 @@ const sources = [
     href: "https://www.gai.com.np/",
   },
   {
-    title: "How to Register a Company in Nepal: Complete Guide 2026",
-    publisher: "CompanyDartaNepal",
-    date: "2026",
-    href: "https://companydartanepal.com/guides/company-registration-in-nepal",
+    title: "GAI kitchen and bar setup package listings",
+    publisher: "GAI",
+    date: "Accessed 10 November 2026",
+    href: "https://www.gai.com.np/deals/",
   },
   {
-    title: "How to Register a Cafe or Restaurant in Nepal: Licenses, Cost & Steps",
-    publisher: "UdhamSathi",
-    date: "2026",
-    href: "https://udhamsathi.com/blog/cafe-restaurant-registration-nepal",
-  },
-  {
-    title: "How to Open a Cafe in Nepal",
-    publisher: "Attorney Nepal",
-    date: "2026",
-    href: "https://www.attorneynepal.com/publications/how-to-open-a-cafe-in-nepal",
-  },
-  {
-    title: "Liquor licence cost in Nepal",
-    publisher: "CorporateNP",
-    date: "2026",
-    href: "https://corporatenp.com/post/liquor-license-cost-nepal",
-  },
-  {
-    title: "Liquor Business Registration in Nepal: Licences, Fees and Process",
-    publisher: "Niti Partners",
-    date: "October 2026",
-    href: "https://nitipartners.com/liquor-business-registration-nepal",
-  },
-  {
-    title: "Food Hygiene and Quality Act, 2081 (Act No. 1 of 2024)",
-    publisher: "Nepal Law Commission / UNEP LEAP",
+    title: "Food Hygiene and Quality Act, 2081",
+    publisher: "Government of Nepal",
     date: "2024",
-    href: "https://leap.unep.org/en/countries/np/national-legislation/food-hygiene-and-quality-act-2081-act-no-1-2024",
+    href: "https://giwmscdnone.gov.np/media/pdf_upload/%E0%A4%96%E0%A4%BE%E0%A4%A6%E0%A5%8D%E0%A4%AF%20%E0%A4%B8%E0%A5%8D%E0%A4%B5%E0%A4%9A%E0%A5%8D%E0%A4%9B%E0%A4%A4%E0%A4%BE%20%E0%A4%A4%E0%A4%A5%E0%A4%BE%20%E0%A4%97%E0%A5%81%E0%A4%A3%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A4%B0%20%E0%A4%90%E0%A4%A8,%20%E0%A5%A8%E0%A5%A6%E0%A5%AE%E0%A5%A7_brxoic2.pdf",
   },
   {
-    title: "Labour Act 2074 and related notices",
-    publisher: "Department of Labour, Government of Nepal",
-    date: "2025",
-    href: "https://dol.gov.np/site/notice/112",
+    title: "Labour Act, 2074",
+    publisher: "Nepal Law Commission",
+    date: "2026",
+    href: "https://lawcommission.gov.np/content/13309/labor-act-2017/",
   },
   {
     title: "Social Security Fund",
@@ -191,6 +161,168 @@ const sources = [
     publisher: "Government of Nepal",
     date: "2026",
     href: "https://ibn.gov.np/",
+  },
+  {
+    title: "Office of the Company Registrar: revenue and fees",
+    publisher: "Government of Nepal",
+    date: "2026",
+    href: "https://ocr.gov.np/pages/revenue",
+  },
+  {
+    title: "Value Added Tax Act, 2052 (as amended)",
+    publisher: "Inland Revenue Department",
+    date: "2026",
+    href: "https://ird.gov.np/category/valueaddedtaxact/",
+  },
+  {
+    title: "Value Added Tax Rules, 2053 (27th Amendment)",
+    publisher: "Inland Revenue Department",
+    date: "18 Poush 2082",
+    href: "https://ird.gov.np/content/13412/value-added-tax-rules--2053--with-twenty-seventh/",
+  },
+  {
+    title: "Income Tax Act, 2058 (as amended)",
+    publisher: "Inland Revenue Department",
+    date: "2026",
+    href: "https://ird.gov.np/content/13405/income-tax-act--2058--as-amended-by/",
+  },
+  {
+    title: "Income tax rate for entities, FY 2083/84",
+    publisher: "Inland Revenue Department",
+    date: "2083/84",
+    href: "https://ird.gov.np/content/13608/income-tax-rate-for-the-entity-for/",
+  },
+  {
+    title: "Excise Duty Rules, 2059 (28th Amendment)",
+    publisher: "Inland Revenue Department",
+    date: "2083/02/15",
+    href: "https://ird.gov.np/category/exciserules",
+  },
+  {
+    title: "Excise Duty Act, 2058",
+    publisher: "Inland Revenue Department",
+    date: "2026",
+    href: "https://ird.gov.np/category/exciseact/",
+  },
+  {
+    title: "Liquor Act, 2031",
+    publisher: "Nepal Law Commission",
+    date: "2026",
+    href: "https://lawcommission.gov.np/content/13414/the-madira-act--2031/",
+  },
+  {
+    title: "Kathmandu Metropolitan City Finance Act, 2083",
+    publisher: "Kathmandu Metropolitan City",
+    date: "2083 Shrawan 1",
+    href: "https://files.kathmandu.gov.np/uploads/medias/972eddda919c4cb9989f3dac4a76a2b4.pdf",
+  },
+  {
+    title: "Kathmandu Metropolitan City Finance Act 2083/84 summary",
+    publisher: "KMC Metro News",
+    date: "2083/04/08",
+    href: "https://metronews.kathmandu.gov.np/news/detail/2007469128",
+  },
+  {
+    title: "Biratnagar Metropolitan City Finance Act, 2083",
+    publisher: "Biratnagar Metropolitan City",
+    date: "2083",
+    href: "https://www.biratnagarmun.gov.np/sites/biratnagarmun.gov.np/files/documents/%E0%A4%86%E0%A4%B0%E0%A5%8D%E0%A4%A5%E0%A4%BF%E0%A4%95%20%E0%A4%90%E0%A4%A8%20%E0%A5%A8%E0%A5%A6%E0%A5%AE%E0%A5%A9.pdf",
+  },
+  {
+    title: "Sangurigadhi Rural Municipality: tax and fees",
+    publisher: "Sangurigadhi Rural Municipality, Dhankuta",
+    date: "2026",
+    href: "https://www.sangurigadhimun.gov.np/tax-and-fees",
+  },
+  {
+    title: "Dharan Sub-Metropolitan City",
+    publisher: "Dharan Sub-Metropolitan City",
+    date: "2026",
+    href: "https://dharan.gov.np/ne",
+  },
+  {
+    title: "Itahari Sub-Metropolitan City",
+    publisher: "Itahari Sub-Metropolitan City",
+    date: "2026",
+    href: "https://itaharimun.gov.np/ne",
+  },
+  {
+    title: "Pokhara Metropolitan City: acts and directives",
+    publisher: "Pokhara Metropolitan City",
+    date: "2026",
+    href: "https://pokharamun.gov.np/act-law-directives",
+  },
+  {
+    title: "Foreign Investment and Technology Transfer Act, 2075",
+    publisher: "Nepal Law Commission",
+    date: "2026",
+    href: "https://lawcommission.gov.np/content/12171/12171-the-foreign-investment-and-tec/",
+  },
+  {
+    title: "Department of Industry: foreign investment in a new industry",
+    publisher: "Government of Nepal",
+    date: "Accessed 10 November 2026",
+    href: "https://www.doind.gov.np/foreign-investment",
+  },
+  {
+    title: "Nepal FDI Trends 2026",
+    publisher: "Department of Industry",
+    date: "2026",
+    href: "https://doind.gov.np/uploads/notices/Notices-20260717154330992.pdf",
+  },
+  {
+    title: "Nepal Rastra Bank: foreign investment and foreign loan bylaw",
+    publisher: "Nepal Rastra Bank",
+    date: "2019",
+    href: "https://www.nrb.org.np/contents/uploads/2019/12/NRB-FIFL-Bylaw_English.pdf",
+  },
+  {
+    title: "Mandabya: about the hospitality supplies business",
+    publisher: "Mandabya",
+    date: "Accessed 10 November 2026",
+    href: "https://mandabya.com/about-us/",
+  },
+  {
+    title: "Nirmala Steel Fabrication & Training Center, Itahari",
+    publisher: "Nirmala Steel",
+    date: "Accessed 10 November 2026",
+    href: "https://www.nirmalasteel.com/",
+  },
+  {
+    title: "Semco commercial kitchen and laundry catalogue",
+    publisher: "Semco Pvt. Ltd.",
+    date: "Accessed 10 November 2026",
+    href: "https://semcopvtltd.com.np/catalogue.pdf",
+  },
+  {
+    title: "Kitchen Craft Nepal",
+    publisher: "Kitchen Craft Nepal",
+    date: "Accessed 10 November 2026",
+    href: "https://kitchencraftnepal.com/",
+  },
+  {
+    title: "The Dimension commercial kitchen equipment",
+    publisher: "The Dimension Pvt. Ltd.",
+    date: "Accessed 10 November 2026",
+    href: "http://www.kitchenequipmentsnepal.com/",
+  },
+  {
+    title: "Quality Kitchen Equipment, Kathmandu",
+    publisher: "Quality Kitchen Equipment",
+    date: "Accessed 10 November 2026",
+    href: "http://qualitykitchennepal.com/",
+  },
+  {
+    title: "Pokhara Kitchen Equipment Udhyog",
+    publisher: "Yarsa Bazar",
+    date: "Accessed 10 November 2026",
+    href: "https://www.yarsabazar.com/store/pokharakitchen",
+  },
+  {
+    title: "Manali Kitchen, Pokhara",
+    publisher: "Manali Kitchen",
+    date: "Accessed 10 November 2026",
+    href: "https://www.instagram.com/manalikitchen1998/",
   },
 ];
 
@@ -434,10 +566,11 @@ export function StartupCostPartFour() {
         <p>
           Foreign investment adds another layer: FITTA 2075, sector
           classification, the negative list, minimum investment thresholds, DOI
-          or IBN approval, and NRB recording. The general non-IT minimum is NPR
-          20 million per investor, but food-service guidance is sometimes stated
-          at NPR 50 million. Confirm the current route before structuring the
-          company or transferring funds.
+          or IBN approval, and NRB recording. The Department of Industry&apos;s
+          current FAQ says the minimum is NPR 20 million per project, with no
+          upper cap. Restaurant operation is not expressly on the negative list,
+          but local catering is; confirm the boundary and the approval route with
+          DOI before structuring the company or transferring funds.
         </p>
 
         <PullQuote quote="Fund the opening, not just the build. The build is the part the guest can see; the runway is the part that keeps it open." />
@@ -762,16 +895,24 @@ export function StartupCostPartFour() {
       >
         <p>
           The sources below were used for the official fees, market signals,
-          published prices, and legal references in this guide. Where a figure
-          is an analytical estimate, it is labelled as such in the text.
+          published prices, and legal references in this guide. Official legal,
+          tax, municipal, and investment sources are listed alongside the market
+          and supplier references. Where a current municipal schedule could not
+          be retrieved, the article says so rather than substituting another
+          city&apos;s figure. Supplier links are published listings or catalogues,
+          not endorsements or current written quotations. Where a figure is an
+          analytical estimate, it is labelled as such in the text.
         </p>
         <SourceList sources={sources} />
         <Callout variant="note" title="A note on dates and prices">
           <p>
-            Prices, fees, and rules change. The article was published on 10
-            November 2026. Before committing capital, confirm the current fee,
-            tax rate, licence condition, and supplier quotation with the relevant
-            authority or professional adviser.
+            Prices, fees, and rules change. This guide was published on 10
+            November 2026 and last researched on 10 November 2026. Before
+            committing capital, confirm the current fee, tax rate, licence
+            condition, and supplier quotation with the relevant authority or
+            professional adviser. Some official municipal sites were unreachable
+            from the research environment; those gaps are marked REQUIRES DIRECT
+            CONFIRMATION rather than filled with an estimate.
           </p>
         </Callout>
       </ArticleSection>

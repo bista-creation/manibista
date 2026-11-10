@@ -315,12 +315,12 @@ export const startupCostFaqs = [
   {
     question: "How much does a restaurant licence cost in Nepal?",
     answer:
-      "Official fees and local charges vary. Business registration at OCR follows capital slabs; PAN is free; VAT registration depends on turnover; the ward or municipal permit is often NPR 5,000–25,000; the food licence is a local-level fee valid for two years; fire safety is commonly budgeted at NPR 10,000–30,000; and a liquor licence plus excise registration can push total bar compliance into the NPR 50,000–200,000 range. Verify every figure with the relevant authority for your site.",
+      "There is no single national restaurant licence fee. Company registration at the Office of the Company Registrar follows capital slabs; for example, NPR 1,000 up to NPR 100,000 authorised capital. Kathmandu Metropolitan City's Finance Act 2083 sets annual restaurant or bar business tax at NPR 10,000 without dance or orchestra and NPR 20,000 with; café or small restaurant tax is NPR 3,000 to NPR 10,000 by floor area. The Food Hygiene and Quality Act 2081 requires a local food-business licence but does not set the fee. Excise Schedule 2 sets NPR 6,000 for an ordinary restaurant or bar selling foreign liquor by opening a bottle, and NPR 11,000 for a tourist-standard restaurant, resort, or party palace selling foreign and domestic liquor by opening a bottle. Other municipalities must be confirmed directly.",
   },
   {
     question: "How much does restaurant equipment cost in Nepal?",
     answer:
-      "Published supplier packages are a useful starting point but not a market average. GAI has advertised a compact kitchen setup at NPR 515,555, a café kitchen setup at NPR 1,000,000, and a bar setup at NPR 1,120,111. Installation, utilities, ventilation, refrigeration, and compliance can add substantially. Get a written scope and at least three quotations for your actual menu.",
+      "Published supplier packages are a useful starting point but not a market average. GAI has advertised the Commercial Burger Kitchen Setup Package at NPR 515,555, the Complete Cafe Kitchen Equipment Setup at NPR 1,000,000, and the Professional Bar Setup & Equipment Package at NPR 1,120,111. Installation, utilities, ventilation, refrigeration, and compliance can add substantially. Get a written scope and at least three quotations for your actual menu.",
   },
   {
     question: "Is it cheaper to open a café or a restaurant?",
@@ -340,6 +340,36 @@ export const startupCostFaqs = [
   {
     question: "Can a foreigner open a restaurant in Nepal?",
     answer:
-      "Foreign investment is possible but regulated. The Foreign Investment and Technology Transfer Act, 2075 applies, with minimum investment thresholds, sector classification, negative-list restrictions, and approval or recording through the Department of Industry, the Investment Board where applicable, and Nepal Rastra Bank. The general non-IT minimum is NPR 20 million per investor, but food-service guidance is sometimes stated at NPR 50 million. Confirm the current route with DOI, IBN, and NRB before investing.",
+      "Foreign investment is possible but regulated. The Foreign Investment and Technology Transfer Act 2075 and the Industrial Enterprises Act 2020 apply. The Department of Industry's current FAQ says the minimum is NPR 20 million per project, with no upper cap. Restaurant operation is not expressly listed in the DOI negative list, but local catering services are prohibited; the boundary needs written confirmation. The route is DOI approval, company incorporation, tax registration, and industry registration, with Nepal Rastra Bank for foreign exchange and the Investment Board where its jurisdiction applies. Confirm the classification with DOI before investing.",
+  },
+  {
+    question: "Does a restaurant with a bar pay 30% corporate tax?",
+    answer:
+      "Not automatically. The Income Tax Act 2058 sets a 25% general entity rate and a 30% rate for listed activities, including entities conducting transactions in liquor and beer. An ordinary restaurant without liquor should be in the 25% group. A business primarily trading in liquor or beer is in the 30% group. A food-led restaurant with a bar sits between the two: the Act is entity and activity based, no restaurant-specific threshold or IRD circular was located, and the text reviewed does not provide an accounting-separation exemption. Treat this category as requiring written IRD or tax-professional confirmation and model both rates.",
+  },
+  {
+    question: "What is the VAT registration threshold for a restaurant?",
+    answer:
+      "The VAT Act 2052 sets a 13% standard rate, but the registration threshold is in the VAT Rules 2053. Rule 7 of the 27th Amendment sets NPR 5 million for goods, transport equipment, or transport services, and NPR 3 million for mixed goods and services or a service business. Apply within 30 days of crossing the threshold. Confirm the current rule with IRD before relying on the figure.",
+  },
+  {
+    question: "What is the restaurant food licence fee in Nepal?",
+    answer:
+      "The Food Hygiene and Quality Act 2081 requires a food-business licence from the local government head or authorised official. The licence is valid for two years, renewal is due at least 35 days before expiry, late renewal within six months is double the fee, and after six months it is five times the fee. The Act does not set a national fee amount. Ask the municipality or ward for the current application, inspection, and renewal fees.",
+  },
+  {
+    question: "Do I need a separate liquor licence to serve alcohol in a restaurant?",
+    answer:
+      "Yes. The excise licence is issued by the Inland Revenue Department under the Excise Duty Act 2058 and Excise Rules 2059, and a local liquor permit may also be required under the Liquor Act 2031 and local rules. Excise Schedule 2, 28th Amendment, sets NPR 6,000 for an ordinary hotel, restaurant, bar, or lodge selling foreign liquor by opening a bottle, and NPR 11,000 for a tourist-standard restaurant, resort, or party palace selling foreign and domestic liquor by opening a bottle. New licence and renewal amounts are the same in the schedule for these categories. Confirm your exact category before paying.",
+  },
+  {
+    question: "Where can I buy commercial kitchen equipment in Nepal?",
+    answer:
+      "Published listings include GAI, The Dimension, Kitchen Craft Nepal, Quality Kitchen Equipment, Semco, and Mandabya in Kathmandu Valley; Nirmala Steel Fabrication and Itahari Kitchen Store in Itahari; Pokhara Kitchen Equipment Udhyog, Manali Kitchen, P & P Kitchen Suppliers, and Aarohana Enterprises in Pokhara; and machinery or hotelware listings in Biratnagar and Dharan. These are listings, not endorsements, and no supplier was contacted for this article. Send the same written RFQ to at least three suppliers and compare the installed, commissioned, warranted, tax-compliant scope.",
+  },
+  {
+    question: "Is the NPR 1,485,650 Mandabya quotation current?",
+    answer:
+      "No. A quotation dated 2082-05-05 BS for NPR 1,485,650 attributed to Mandabya Steels Industries was not found in the article archive, the supplier's public website, or the public sources reviewed. No supplier was contacted. The figure is not used in any budget or total. Treat it as an unverified historical reference, not a current price.",
   },
 ];

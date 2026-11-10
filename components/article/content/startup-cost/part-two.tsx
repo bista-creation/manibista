@@ -424,85 +424,96 @@ export function StartupCostPartTwo() {
       <ArticleSection
         id="kitchen"
         number="08"
-        title="Commercial kitchen planning and equipment"
+        title="Real Commercial Kitchen Equipment Prices in Nepal"
       >
         <p>
-          Build the kitchen around the menu, not the equipment list. The menu
-          decides the stations, the stations decide the equipment, and the
-          equipment decides the electrical load, gas supply, water, drainage, and
-          ventilation. Reversing that order produces a kitchen that is expensive,
-          cramped, and slow.
+          Commercial kitchen equipment is the largest movable line in most
+          restaurant budgets, and the least transparent. A published package
+          price is not a quotation for your site. A quotation for another site is
+          not a current price. A supplier&apos;s catalogue range is not an
+          installed cost. This section separates those categories so the budget
+          is built on evidence rather than a single attractive number.
         </p>
 
+        <Callout variant="note" title="How to read equipment prices">
+          <p>
+            Four kinds of evidence appear below: a supplier&apos;s published
+            catalogue or package price; a historical quotation; an analytical
+            planning estimate; and a current written quotation for a defined
+            scope. Only the last one can be treated as a price for your
+            restaurant. Where no current written quotation exists, the figure is
+            marked <strong>QUOTE REQUIRED</strong>.
+          </p>
+        </Callout>
+
         <DataTable
-          caption="Kitchen workflow zones"
-          head={["Zone", "What happens there", "Design question"]}
+          caption="Evidence hierarchy for commercial kitchen equipment price Nepal"
+          head={["Evidence type", "What it proves", "What it does not prove", "Status"]}
           rows={[
             [
-              "Receiving and storage",
-              "Delivery check, dry store, cold store, chemical store",
-              "Can deliveries be received without crossing guest areas?",
+              "Published catalogue or package price",
+              "The supplier has publicly offered that package at that price",
+              "That the package fits your menu, site, utilities, or compliance conditions",
+              "VERIFIED PRIMARY DOCUMENT",
             ],
             [
-              "Preparation",
-              "Washing, peeling, cutting, portioning, marinades",
-              "Is there enough clear bench space and hand-wash access?",
+              "Historical quotation",
+              "A price was offered for a defined scope on a stated date",
+              "That the same scope, specification, tax, or price is available today",
+              "HISTORICAL REFERENCE",
             ],
             [
-              "Cooking",
-              "Range, oven, fryer, grill, steamer, or specialist equipment",
-              "What is the peak-hour production sequence?",
+              "Analytical planning estimate",
+              "A budget allowance consistent with this guide's assumptions",
+              "That any supplier will deliver the scope at that amount",
+              "ESTIMATED",
             ],
             [
-              "Pass and plating",
-              "Final assembly, pickup, service call, hot holding",
-              "Can the pass see the room without creating a collision point?",
-            ],
-            [
-              "Wash and waste",
-              "Dishwash, pot wash, glasswash, bins, grease trap",
-              "Is dirty equipment separated from clean equipment?",
-            ],
-            [
-              "Staff facilities",
-              "Lockers, hand-wash, staff WC, break space",
-              "Are staff routes separate from guest routes?",
+              "Current written quotation",
+              "A supplier has priced your defined scope, quantity, site, and terms",
+              "That the supplier will perform, or that the scope is complete",
+              "VERIFIED SUPPLIER QUOTATION",
             ],
           ]}
         />
 
-        <ArticleSubhead>Published kitchen package examples</ArticleSubhead>
+        <ArticleSubhead>Verified supplier evidence: published package prices</ArticleSubhead>
 
         <p>
-          Supplier packages are a useful reality check, but they are examples,
-          not market averages.{" "}
-          <SourceLink href="https://www.gai.com.np/">
-            GAI
-          </SourceLink>{" "}
-          has advertised a compact kitchen setup at NPR 515,555, a café kitchen
-          setup at NPR 1,000,000, and a bar setup at NPR 1,120,111. Those
-          figures describe that supplier&apos;s package and scope. They do not
-          include every installation, utility, or compliance cost in this guide.
+          <SourceLink href="https://www.gai.com.np/">GAI</SourceLink> publishes
+          commercial kitchen, bakery, refrigeration, and bar packages. Three
+          published examples are the Commercial Burger Kitchen Setup Package at
+          NPR 515,555, the Complete Cafe Kitchen Equipment Setup at NPR 1,000,000,
+          and the Professional Bar Setup &amp; Equipment Package at NPR 1,120,111.
+          These are the supplier&apos;s published package examples.
+          They are not quotations for your site, and they are not market
+          averages.
         </p>
 
         <DataTable
-          caption="Supplier package examples (not quotations for your site)"
-          head={["Published package", "Advertised price", "What it illustrates"]}
+          caption="GAI published kitchen and bar package examples, accessed 10 November 2026"
+          head={["Published package", "Published price", "What it illustrates", "Status", "Confidence"]}
           rows={[
             [
-              "Compact kitchen setup",
+              "Commercial Burger Kitchen Setup Package",
               "NPR 515,555",
-              "A compact equipment package can be a meaningful share of a small café budget",
+              "A compact burger kitchen package can absorb a meaningful share of a small café budget",
+              "VERIFIED PRIMARY DOCUMENT",
+              "Medium",
             ],
             [
-              "Café kitchen setup",
+              "Complete Cafe Kitchen Equipment Setup",
               "NPR 1,000,000",
-              "A fuller café kitchen moves the budget toward the base case",
+              "A fuller café kitchen moves the equipment line toward the base case",
+              "VERIFIED PRIMARY DOCUMENT",
+              "Medium",
             ],
             [
-              "Bar setup",
+              "Professional Bar Setup & Equipment Package",
               "NPR 1,120,111",
               "Beverage service adds equipment, storage, and front-of-house cost",
+              "VERIFIED PRIMARY DOCUMENT",
+              "Medium",
             ],
           ]}
         />
@@ -517,42 +528,155 @@ export function StartupCostPartTwo() {
           </p>
         </Callout>
 
-        <ArticleSubhead>New, used, or imported</ArticleSubhead>
+        <ArticleSubhead>Historical quotation check: the Mandabya figure</ArticleSubhead>
+
+        <p>
+          A quotation dated 2082-05-05 BS for NPR 1,485,650 attributed to
+          Mandabya Steels Industries has been mentioned in some discussions of
+          this guide. The original document was not found in the article archive,
+          the supplier&apos;s public website, or the public sources reviewed for
+          this audit. No supplier was contacted. The figure is therefore not used
+          in any budget, total, or recommendation. It is recorded only as an
+          unverified historical reference.
+        </p>
 
         <DataTable
-          caption="Equipment sourcing options"
-          head={["Option", "Advantages", "Risks"]}
+          caption="Alleged Mandabya quotation: document check"
+          head={["Item", "Claimed detail", "What was found", "Status", "Confidence"]}
           rows={[
             [
-              "New local supply",
-              "Warranty, installation support, spare parts, local service",
-              "Higher upfront price; specification may be limited",
+              "Quotation date",
+              "2082-05-05 BS",
+              "No original quotation, bill of quantities, or signed document located",
+              "UNVERIFIED",
+              "Low",
             ],
             [
-              "Used or refurbished",
-              "Lower capital cost; faster availability",
-              "No warranty, unknown history, gas or electrical conversion, parts availability",
+              "Supplier",
+              "Mandabya Steels Industries",
+              "The public Mandabya site reviewed lists hospitality supplies and commercial kitchen equipment; it does not publish this quotation",
+              "UNVERIFIED",
+              "Low",
             ],
             [
-              "Imported new",
-              "Wide specification choice; competitive price at some scales",
-              "Freight, customs, VAT, agent fees, voltage, lead time, service network",
+              "Total",
+              "NPR 1,485,650",
+              "No item schedule, tax invoice, freight, installation, or VAT treatment located",
+              "UNVERIFIED",
+              "Low",
             ],
             [
-              "Lease or rent-to-own",
-              "Lower initial cash outlay",
-              "Higher total cost, restrictive terms, asset ownership",
+              "Use in this guide",
+              "None",
+              "Excluded from every calculation and supplier comparison",
+              "UNVERIFIED",
+              "High",
             ],
           ]}
         />
 
+        <Callout variant="note" title="If you have the original document">
+          <p>
+            Check the supplier&apos;s PAN/VAT details, quotation number, date and
+            validity, item quantities, steel grade and thickness, dimensions,
+            gas and electrical specifications, installation scope, freight,
+            taxes, payment terms, warranty, and authorized signature. A lump-sum
+            total without a bill of quantities cannot be compared with another
+            supplier&apos;s quote.
+          </p>
+        </Callout>
+
+        <ArticleSubhead>Commercial kitchen equipment price Nepal: what public sources can and cannot establish</ArticleSubhead>
+
         <p>
-          In the five models, kitchen equipment and refrigeration together are
-          about one-fifth of pre-opening cost. That share is remarkably stable
-          across formats in these scenarios, even though the absolute numbers
-          rise sharply. It is a reminder that the kitchen is not a place to
-          &quot;save&quot; the project into viability; it is the production
-          engine that has to support the sales plan.
+          Most equipment categories do not have a reliable public item price in
+          Nepal. Fabrication is often priced by dimensions, steel grade, and
+          thickness. Refrigeration depends on capacity, temperature, refrigerant,
+          and warranty. Exhaust and HVAC depend on the site. The honest answer for
+          these categories is a written quotation, not a national average.
+        </p>
+
+        <DataTable
+          caption="Equipment categories and price evidence, November 2026"
+          head={["Category", "What the quotation must define", "Price evidence", "Status"]}
+          rows={[
+            [
+              "Gas range and cooking line",
+              "Burner count, gas type and pressure, body and steel grade, legs, installation",
+              "No current published item price located",
+              "QUOTE REQUIRED",
+            ],
+            [
+              "Stainless fabrication: tables, sinks, racks, shelves",
+              "SS grade, thickness or gauge, dimensions, welds, finish, undershelf, legs",
+              "Fabricator-specific; no current public item price located",
+              "QUOTE REQUIRED",
+            ],
+            [
+              "Commercial refrigeration: reach-in, cold room, freezer",
+              "Capacity, temperature, refrigerant, doors, voltage, remote or plug-in, warranty",
+              "No current public item price located",
+              "QUOTE REQUIRED",
+            ],
+            [
+              "Exhaust hood, duct, fan, and make-up air",
+              "Hood length, filters, duct route, fan duty, fire dampers, noise, discharge point",
+              "Site-specific; no public installed price located",
+              "QUOTE REQUIRED",
+            ],
+            [
+              "Bakery equipment: mixer, oven, proofer, sheeter",
+              "Batch capacity, power or gas, controls, installation, warranty",
+              "No current public item price located",
+              "QUOTE REQUIRED",
+            ],
+            [
+              "Dishwash and glasswash",
+              "Racks per hour, water supply, drainage, booster, chemicals",
+              "No current public item price located",
+              "QUOTE REQUIRED",
+            ],
+            [
+              "Bar equipment: ice, glasswash, back bar, taps",
+              "Ice output, storage, refrigeration, drainage, gas, glass capacity",
+              "GAI bar package is a published example only; item prices not verified",
+              "VERIFIED PRIMARY DOCUMENT / QUOTE REQUIRED",
+            ],
+            [
+              "Furniture: tables, chairs, banquettes",
+              "Dimensions, material, upholstery, fire retardancy, delivery",
+              "No current public item price located",
+              "QUOTE REQUIRED",
+            ],
+            [
+              "POS, CCTV, and networking",
+              "Licences, terminals, cameras, cabling, installation, support",
+              "Published POS prices appear in section 12; CCTV and networking are not verified",
+              "ESTIMATED / QUOTE REQUIRED",
+            ],
+            [
+              "HVAC",
+              "Heat load, fresh air, ducting, condensers, controls, electrical",
+              "Site-specific; no public installed price located",
+              "QUOTE REQUIRED",
+            ],
+            [
+              "Fire extinguishers",
+              "Class, size, mounting, servicing",
+              "Published retail range NPR 1,000-5,500; wet-chemical NPR 6,500-16,500",
+              "VERIFIED PRIMARY DOCUMENT",
+            ],
+          ]}
+        />
+
+        <ArticleSubhead>Planning estimates are not supplier prices</ArticleSubhead>
+
+        <p>
+          The five investment models in this guide carry kitchen and refrigeration
+          allowances. They are analytical estimates built for scenario planning,
+          not quotations. The table below shows the share of pre-opening cost in
+          the base case. It is a budgeting check, not a market average, and it
+          should be replaced by written quotations before a lease is signed.
         </p>
 
         <DataTable
@@ -561,20 +685,264 @@ export function StartupCostPartTwo() {
           rows={kitchenShareRows}
         />
 
-        <ArticleSubhead>Import checklist</ArticleSubhead>
+        <ArticleSubhead>Restaurant equipment suppliers Nepal: city-by-city directory</ArticleSubhead>
+
+        <p>
+          The directory below identifies suppliers and specialists with a public
+          listing or catalogue. It is not an endorsement, a ranking, or evidence
+          that the supplier has current stock, the required certification, or
+          capacity for your project. No supplier was contacted for this article.
+          Some listings are on social platforms that block automated access;
+          search the business name directly if a link does not open. Confirm the
+          legal name, PAN/VAT registration, showroom or workshop, service
+          coverage, and written quotation directly.
+        </p>
+
+        <DataTable
+          caption="Commercial kitchen equipment and hospitality suppliers by city"
+          head={["City", "Supplier or specialist", "Categories", "Evidence status"]}
+          rows={[
+            [
+              "Kathmandu Valley",
+              "GAI, Kathmandu",
+              "Commercial kitchen, bakery, refrigeration, exhaust, bar",
+              "Published catalogue; VERIFIED PRIMARY DOCUMENT",
+            ],
+            [
+              "Kathmandu Valley",
+              "The Dimension Pvt. Ltd., Kathmandu",
+              "Fabrication and import of commercial kitchen equipment",
+              "Published website; REQUIRES DIRECT CONFIRMATION",
+            ],
+            [
+              "Kathmandu Valley",
+              "Kitchen Craft Nepal, Kathmandu",
+              "Commercial kitchen equipment, stainless fabrication",
+              "Published website; REQUIRES DIRECT CONFIRMATION",
+            ],
+            [
+              "Kathmandu Valley",
+              "Quality Kitchen Equipment, Gairidhara, Kathmandu",
+              "Heavy-gauge stainless tables, cooking ranges, fabrication",
+              "Published website; REQUIRES DIRECT CONFIRMATION",
+            ],
+            [
+              "Kathmandu Valley",
+              "Semco Pvt. Ltd., Kathmandu and Itahari",
+              "Commercial and imported kitchen equipment, stainless furniture, laundry",
+              "Published catalogue; REQUIRES DIRECT CONFIRMATION",
+            ],
+            [
+              "Kathmandu Valley",
+              "Mandabya, Kathmandu, Pokhara, and Butwal",
+              "Hospitality supplies, commercial kitchen, bar and bakery equipment",
+              "Published website; REQUIRES DIRECT CONFIRMATION",
+            ],
+            [
+              "Biratnagar",
+              "Shree Balaji Machinery Udyog & Traders, Biratnagar",
+              "Food-processing and commercial kitchen machinery",
+              "Published listing; REQUIRES DIRECT CONFIRMATION",
+            ],
+            [
+              "Biratnagar",
+              "Bhagwati Machinery Suppliers, Biratnagar and Dharan coverage",
+              "Food-processing and steam equipment",
+              "Published listing; REQUIRES DIRECT CONFIRMATION",
+            ],
+            [
+              "Biratnagar",
+              "Local stainless fabricators and refrigeration workshops",
+              "Custom fabrication, refrigeration repair, installation",
+              "QUOTE REQUIRED",
+            ],
+            [
+              "Itahari",
+              "Nirmala Steel Fabrication & Training Center, Itahari, Sunsari",
+              "Gas ranges, ovens, stainless fabrication, installation, training",
+              "Published website; VERIFIED PRIMARY DOCUMENT",
+            ],
+            [
+              "Itahari",
+              "Itahari Kitchen Store, Itahari",
+              "Hotelware, restaurant, café, and bar supplies",
+              "Published listing; REQUIRES DIRECT CONFIRMATION",
+            ],
+            [
+              "Itahari",
+              "Semco Itahari branch",
+              "Commercial kitchen, stainless furniture, laundry",
+              "Published catalogue; REQUIRES DIRECT CONFIRMATION",
+            ],
+            [
+              "Dharan",
+              "Local hotelware and machinery listings",
+              "Kitchenware, food-processing machinery, general hotel supplies",
+              "No specialist with a verified catalogue found; QUOTE REQUIRED",
+            ],
+            [
+              "Pokhara",
+              "Pokhara Kitchen Equipment Udhyog, Pokhara",
+              "Commercial kitchen equipment manufacturing",
+              "Published listing; REQUIRES DIRECT CONFIRMATION",
+            ],
+            [
+              "Pokhara",
+              "Manali Kitchen, Pokhara",
+              "Commercial kitchen equipment and appliances",
+              "Published listing; REQUIRES DIRECT CONFIRMATION",
+            ],
+            [
+              "Pokhara",
+              "P & P Kitchen Suppliers Pvt. Ltd., Pokhara",
+              "Hotel, resort, restaurant, and bar equipment",
+              "Published listing; REQUIRES DIRECT CONFIRMATION",
+            ],
+            [
+              "Pokhara",
+              "Aarohana Enterprises, Pokhara",
+              "Food and hospitality industry supplies",
+              "Published listing; REQUIRES DIRECT CONFIRMATION",
+            ],
+            [
+              "Pokhara",
+              "Mandabya Pokhara outlet",
+              "Hospitality supplies, kitchen, bar, and bakery equipment",
+              "Published website; REQUIRES DIRECT CONFIRMATION",
+            ],
+          ]}
+        />
+
+        <ArticleSubhead>Reusable RFQ for restaurant equipment suppliers Nepal</ArticleSubhead>
+
+        <p>
+          Send the same RFQ to at least three suppliers and require a
+          line-by-line response. A lump-sum quote cannot be compared. State that
+          the quotation must remain valid for at least 30 days and that the
+          supplier must disclose every exclusion.
+        </p>
 
         <Checklist
           items={[
-            "Confirm the voltage, phase, frequency, and plug standard before ordering.",
-            "Ask for the country of origin, model number, serial number, and warranty terms.",
-            "Get a landed-cost calculation: equipment, freight, insurance, customs, VAT, agent, and delivery.",
-            "Confirm spare-parts availability and the local service partner.",
-            "Ask for commissioning and operator training in the quotation.",
-            "Check whether the supplier will handle warranty claims in Nepal.",
-            "Plan for a longer lead time than the sales team promises.",
-            "Inspect the equipment on arrival and document any damage before signing.",
+            "Project location, delivery address, floor level, lift access, and delivery window.",
+            "Kitchen dimensions, layout drawing, seating, and expected covers per service.",
+            "Menu or station list, equipment schedule, and quantities.",
+            "Stainless steel grade, thickness or gauge, dimensions, finish, and welding standard.",
+            "Gas type and pressure, burner rating, electrical voltage, phase, frequency, and load per item.",
+            "Water supply, drainage, hood and exhaust, make-up air, and fire-safety requirements.",
+            "Installation, commissioning, operator training, and site cleanup.",
+            "Warranty period, spare-parts list, service response time, and local service partner.",
+            "Delivery lead time, unloading, and responsibility for damage in transit.",
+            "VAT or fiscal invoice, freight, customs, and any other taxes or charges.",
+            "Payment terms, retention, milestone schedule, and price validity.",
+            "Reference installations, authorized signatory, and company registration details.",
           ]}
         />
+
+        <DataTable
+          caption="RFQ schedule: information every quotation should contain"
+          head={["RFQ section", "Information to provide", "Why it matters"]}
+          rows={[
+            [
+              "Project brief",
+              "Location, format, seating, covers, service style, opening date",
+              "Prevents a package designed for a different operation",
+            ],
+            [
+              "Equipment schedule",
+              "Item, quantity, dimensions, capacity, and station",
+              "Creates a like-for-like comparison",
+            ],
+            [
+              "Materials",
+              "SS grade, thickness, finish, insulation, and food-contact suitability",
+              "Two quotes can look identical while using different steel",
+            ],
+            [
+              "Utilities",
+              "Gas type and pressure, electrical load, water, drainage, exhaust",
+              "Installation cost and feasibility depend on these inputs",
+            ],
+            [
+              "Scope",
+              "Supply only, delivery, installation, commissioning, training, and cleanup",
+              "The lowest supply price may exclude the most work",
+            ],
+            [
+              "Commercial terms",
+              "VAT, freight, payment, retention, validity, and price escalation",
+              "Protects the budget between quotation and order",
+            ],
+            [
+              "After-sales",
+              "Warranty, spare parts, response time, and service coverage",
+              "Equipment downtime is a revenue cost",
+            ],
+            [
+              "Evidence",
+              "Company registration, PAN/VAT, references, and authorized signature",
+              "Confirms who is legally responsible for the offer",
+            ],
+          ]}
+        />
+
+        <ArticleSubhead>How to compare equipment quotations</ArticleSubhead>
+
+        <DataTable
+          caption="Quotation comparison checklist"
+          head={["Comparison point", "Question to ask", "Red flag"]}
+          rows={[
+            [
+              "Scope",
+              "Is every item, installation, and commissioning task included?",
+              "A lump sum with no bill of quantities",
+            ],
+            [
+              "Steel",
+              "What grade and thickness are used for food-contact and structural parts?",
+              "Unspecified stainless steel or mixed grades",
+            ],
+            [
+              "Utilities",
+              "Who connects gas, electrical, water, drainage, and exhaust?",
+              "The quote stops at the equipment leg",
+            ],
+            [
+              "VAT",
+              "Is VAT included, and will a fiscal invoice be issued?",
+              "Cash price with no tax invoice",
+            ],
+            [
+              "Warranty",
+              "What is covered, for how long, and who performs the repair?",
+              "Warranty depends on a third party with no local presence",
+            ],
+            [
+              "Spare parts",
+              "Which parts are stocked locally, and at what price?",
+              "No spare-parts list or service contact",
+            ],
+            [
+              "Lead time",
+              "What is the delivery and installation date, and what is the penalty for delay?",
+              "An opening date that depends on an unconfirmed shipment",
+            ],
+            [
+              "Price validity",
+              "How long is the quote valid, and what can change the price?",
+              "A verbal price or a quote with no expiry",
+            ],
+          ]}
+        />
+
+        <Callout variant="tip" title="The cheapest quote is not the lowest cost">
+          <p>
+            Compare the installed, commissioned, warranted, tax-compliant cost.
+            A quote that is NPR 100,000 cheaper but excludes installation,
+            commissioning, a grease hood, or a local warranty can cost more over
+            the first year of operation.
+          </p>
+        </Callout>
 
         <PullQuote quote="The most expensive kitchen is the one you have to rebuild because it was designed for a menu you no longer serve." />
       </ArticleSection>

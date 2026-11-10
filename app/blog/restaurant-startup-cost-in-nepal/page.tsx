@@ -114,7 +114,7 @@ export default function StartupCostGuidePage() {
 
               <div className="article-byline-meta">
                 <span>Published {formatDate(startupCostGuide.published)}</span>
-                <span>Updated {formatDate(startupCostGuide.updated)}</span>
+                <span>{`Last research update ${formatDate(startupCostGuide.updated)}`}</span>
                 <span>{startupCostGuide.readingMinutes} min read</span>
               </div>
             </div>
@@ -290,8 +290,11 @@ export default function StartupCostGuidePage() {
           readingMinutes: startupCostGuide.readingMinutes,
           about: [
             "Restaurant startup costs",
-            "Restaurant finance in Nepal",
-            "Hospitality construction",
+            "Restaurant licence fees in Nepal",
+            "Restaurant registration in Nepal",
+            "Commercial kitchen equipment prices in Nepal",
+            "Restaurant tax rates in Nepal",
+            "Foreign investment in Nepal",
             "Food business licensing",
             "Working capital",
           ],
