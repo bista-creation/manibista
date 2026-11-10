@@ -32,7 +32,6 @@ export const navigation = [
   { label: "Story", href: "/story" },
   { label: "Menu", href: "/menu" },
   { label: "Experiences", href: "/experiences" },
-  { label: "Reserve", href: "/reserve" },
 ] as const;
 
 export const footerNavigation = [
@@ -43,6 +42,15 @@ export const footerNavigation = [
       { label: "The Menu", href: "/menu" },
       { label: "Experiences", href: "/experiences" },
       { label: "Reserve", href: "/reserve" },
+      { label: "Restaurant Business", href: "/blog" },
+      {
+        label: "Restaurant Startup Cost in Nepal",
+        href: "/blog/restaurant-startup-cost-in-nepal",
+      },
+      {
+        label: "Opening a Restaurant in Nepal",
+        href: "/blog/how-to-open-a-successful-restaurant-in-nepal",
+      },
     ],
   },
   {

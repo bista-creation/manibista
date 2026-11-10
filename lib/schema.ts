@@ -156,6 +156,155 @@ export function breadcrumbSchema(
   };
 }
 
+export function articleSchema({
+  title,
+  description,
+  path,
+  image,
+  imageAlt,
+  imageWidth,
+  imageHeight,
+  datePublished,
+  dateModified,
+  section,
+  keywords,
+  wordCount,
+  readingMinutes,
+  about = [],
+}: {
+  title: string;
+  description: string;
+  path: string;
+  image: string;
+  imageAlt: string;
+  imageWidth: number;
+  imageHeight: number;
+  datePublished: string;
+  dateModified: string;
+  section: string;
+  keywords: readonly string[];
+  wordCount: number;
+  readingMinutes: number;
+  about?: readonly string[];
+}): SchemaValue {
+  const url = new URL(path, siteConfig.url).toString();
+  const imageUrl = new URL(image, siteConfig.url).toString();
+  const articleId = `${url}#article`;
+  const webpageId = `${url}#webpage`;
+  const imageId = `${url}#primaryimage`;
+  const breadcrumbId = `${url}#breadcrumb`;
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "@id": articleId,
+        headline: title,
+        description,
+        image: { "@id": imageId },
+        datePublished,
+        dateModified,
+        author: { "@id": `${siteConfig.url}/#chef` },
+        publisher: { "@id": `${siteConfig.url}/#business` },
+        mainEntityOfPage: { "@id": webpageId },
+        isPartOf: { "@id": `${siteConfig.url}/blog#blog` },
+        articleSection: section,
+        keywords: keywords.join(", "),
+        wordCount,
+        timeRequired: `PT${readingMinutes}M`,
+        inLanguage: "en",
+        about: about.map((name) => ({ "@type": "Thing", name })),
+        copyrightHolder: { "@id": `${siteConfig.url}/#chef` },
+        copyrightYear: new Date(datePublished).getFullYear(),
+      },
+      {
+        "@type": "WebPage",
+        "@id": webpageId,
+        url,
+        name: title,
+        description,
+        isPartOf: { "@id": `${siteConfig.url}/#website` },
+        primaryImageOfPage: { "@id": imageId },
+        breadcrumb: { "@id": breadcrumbId },
+        mainEntity: { "@id": articleId },
+        inLanguage: "en",
+      },
+      {
+        "@type": "ImageObject",
+        "@id": imageId,
+        url: imageUrl,
+        contentUrl: imageUrl,
+        caption: imageAlt,
+        width: imageWidth,
+        height: imageHeight,
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": breadcrumbId,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: siteConfig.url,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Journal",
+            item: new URL("/blog", siteConfig.url).toString(),
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: title,
+            item: url,
+          },
+        ],
+      },
+    ],
+  };
+}
+
+export function blogSchema({
+  title,
+  description,
+  path,
+  posts,
+}: {
+  title: string;
+  description: string;
+  path: string;
+  posts: Array<{
+    title: string;
+    path: string;
+    description: string;
+    datePublished: string;
+  }>;
+}): SchemaValue {
+  const url = new URL(path, siteConfig.url).toString();
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "@id": `${url}#blog`,
+    name: title,
+    description,
+    url,
+    publisher: { "@id": `${siteConfig.url}/#business` },
+    inLanguage: "en",
+    blogPost: posts.map((post) => ({
+      "@type": "BlogPosting",
+      headline: post.title,
+      description: post.description,
+      url: new URL(post.path, siteConfig.url).toString(),
+      datePublished: post.datePublished,
+      author: { "@id": `${siteConfig.url}/#chef` },
+    })),
+  };
+}
+
 export function menuSchema(
   sections: Array<{
     name: string;

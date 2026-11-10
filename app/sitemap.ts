@@ -10,6 +10,9 @@ const routes = [
   "/private-chef-kathmandu",
   "/private-chef-nepal",
   "/private-chef-india",
+  "/blog",
+  "/blog/how-to-open-a-successful-restaurant-in-nepal",
+  "/blog/restaurant-startup-cost-in-nepal",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

@@ -128,14 +128,12 @@ export function SiteFooter() {
             >
               LinkedIn
             </a>
-            <a
-              href={siteConfig.socials.wordpress}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/blog"
               className="transition-colors hover:text-gold"
             >
               Journal
-            </a>
+            </Link>
           </div>
         </div>
       </div>

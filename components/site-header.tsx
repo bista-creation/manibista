@@ -3,20 +3,29 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { businessNavigation } from "@/lib/articles";
 import { cn } from "@/lib/utils";
 import { mailtoLink, navigation, siteConfig, whatsappLink } from "@/lib/site";
 import { Logo, LogoMark } from "./logo";
-import { ArrowUpRight, CloseIcon, MenuIcon, WhatsAppIcon } from "./icons";
-
-const mobileNavigation = navigation.filter((item) => item.href !== "/reserve");
+import {
+  ArrowUpRight,
+  ChevronDown,
+  CloseIcon,
+  MenuIcon,
+  WhatsAppIcon,
+} from "./icons";
 
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [businessOpen, setBusinessOpen] = useState(false);
   const pathname = usePathname();
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
+  const businessRef = useRef<HTMLDivElement>(null);
+  const businessButtonRef = useRef<HTMLButtonElement>(null);
+  const businessPanelRef = useRef<HTMLDivElement>(null);
 
   const closeMenu = useCallback((restoreFocus = false) => {
     if (restoreFocus) {
@@ -24,6 +33,14 @@ export function SiteHeader() {
     }
 
     setOpen(false);
+  }, []);
+
+  const closeBusiness = useCallback((restoreFocus = false) => {
+    if (restoreFocus) {
+      businessButtonRef.current?.focus();
+    }
+
+    setBusinessOpen(false);
   }, []);
 
   useEffect(() => {
@@ -35,7 +52,42 @@ export function SiteHeader() {
 
   useEffect(() => {
     setOpen(false);
+    setBusinessOpen(false);
   }, [pathname]);
+
+  useEffect(() => {
+    if (open) {
+      setBusinessOpen(false);
+    }
+  }, [open]);
+
+  useEffect(() => {
+    if (!businessOpen) return;
+
+    const onPointerDown = (event: PointerEvent) => {
+      if (
+        businessRef.current &&
+        !businessRef.current.contains(event.target as Node)
+      ) {
+        closeBusiness();
+      }
+    };
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        closeBusiness(true);
+      }
+    };
+
+    document.addEventListener("pointerdown", onPointerDown);
+    document.addEventListener("keydown", onKeyDown);
+
+    return () => {
+      document.removeEventListener("pointerdown", onPointerDown);
+      document.removeEventListener("keydown", onKeyDown);
+    };
+  }, [businessOpen, closeBusiness]);
 
   useEffect(() => {
     window.dispatchEvent(new CustomEvent("cb:menu", { detail: open }));
@@ -108,6 +160,9 @@ export function SiteHeader() {
     };
   }, [open, closeMenu]);
 
+  const businessActive =
+    pathname === "/blog" || pathname.startsWith("/blog/");
+
   return (
     <>
       <header className={cn("site-header", scrolled && "is-scrolled")}>
@@ -115,7 +170,7 @@ export function SiteHeader() {
           <Logo />
 
           <nav
-            className="hidden items-center gap-9 lg:flex"
+            className="hidden items-center gap-6 xl:gap-9 lg:flex"
             aria-label="Main navigation"
           >
             {navigation.map((item) => (
@@ -130,6 +185,107 @@ export function SiteHeader() {
                 {item.label}
               </Link>
             ))}
+
+            <div
+              ref={businessRef}
+              className={cn(
+                "nav-dropdown",
+                businessOpen && "is-open",
+                businessActive && "is-active",
+              )}
+              onBlur={(event) => {
+                if (
+                  !event.currentTarget.contains(event.relatedTarget as Node)
+                ) {
+                  setBusinessOpen(false);
+                }
+              }}
+            >
+              <button
+                ref={businessButtonRef}
+                id="business-menu-button"
+                type="button"
+                className={cn(
+                  "nav-link nav-dropdown-trigger",
+                  businessActive && "text-cream",
+                )}
+                aria-expanded={businessOpen}
+                aria-controls="business-menu"
+                onClick={() => setBusinessOpen((value) => !value)}
+                onKeyDown={(event) => {
+                  if (event.key === "ArrowDown") {
+                    event.preventDefault();
+                    setBusinessOpen(true);
+                    window.requestAnimationFrame(() => {
+                      businessPanelRef.current
+                        ?.querySelector<HTMLAnchorElement>("a")
+                        ?.focus();
+                    });
+                  }
+
+                  if (event.key === "Escape") {
+                    event.preventDefault();
+                    closeBusiness();
+                  }
+                }}
+              >
+                Restaurant Business
+                <ChevronDown className="nav-dropdown-chevron" />
+              </button>
+
+              <div
+                ref={businessPanelRef}
+                id="business-menu"
+                className="nav-dropdown-panel"
+                role="group"
+                aria-labelledby="business-menu-button"
+                onKeyDown={(event) => {
+                  if (event.key === "Escape") {
+                    event.preventDefault();
+                    closeBusiness(true);
+                  }
+                }}
+              >
+                <p className="nav-dropdown-eyebrow">Restaurant Business</p>
+                <ul className="nav-dropdown-list">
+                  {businessNavigation.map((item) => {
+                    const active =
+                      item.href === "/blog"
+                        ? pathname === "/blog"
+                        : pathname === item.href;
+
+                    return (
+                      <li key={item.href}>
+                        <Link
+                          href={item.href}
+                          className={cn(
+                            "nav-dropdown-link",
+                            active && "is-active",
+                          )}
+                          aria-current={active ? "page" : undefined}
+                          onClick={() => closeBusiness()}
+                        >
+                          <span className="nav-dropdown-link-label">
+                            {item.label}
+                          </span>
+                          <span className="nav-dropdown-link-copy">
+                            {item.description}
+                          </span>
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
+                <Link
+                  href="/blog"
+                  className="nav-dropdown-footer"
+                  onClick={() => closeBusiness()}
+                >
+                  Browse the Journal
+                  <ArrowUpRight className="h-3.5 w-3.5" />
+                </Link>
+              </div>
+            </div>
           </nav>
 
           <div className="hidden items-center gap-5 lg:flex">
@@ -217,7 +373,7 @@ export function SiteHeader() {
             <p className="eyebrow mobile-menu-kicker">The experience</p>
 
             <nav className="mobile-menu-nav" aria-label="Mobile navigation">
-              {mobileNavigation.map((item, index) => {
+              {navigation.map((item, index) => {
                 const active = pathname === item.href;
 
                 return (
@@ -239,6 +395,43 @@ export function SiteHeader() {
                 );
               })}
             </nav>
+
+            <div className="mobile-menu-guides">
+              <p className="eyebrow mobile-menu-guides-title">
+                Restaurant Business
+              </p>
+              <div className="mobile-menu-guide-links">
+                {businessNavigation.map((item) => {
+                  const active =
+                    item.href === "/blog"
+                      ? pathname === "/blog"
+                      : pathname === item.href;
+
+                  return (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className={cn(
+                        "mobile-menu-guide-link",
+                        active && "is-active",
+                      )}
+                      aria-current={active ? "page" : undefined}
+                      onClick={() => closeMenu()}
+                    >
+                      <span>
+                        <span className="mobile-menu-guide-label">
+                          {item.label}
+                        </span>
+                        <span className="mobile-menu-guide-copy">
+                          {item.description}
+                        </span>
+                      </span>
+                      <ArrowUpRight className="h-3.5 w-3.5" />
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
 
             <Link
               href="/reserve"

@@ -7,8 +7,16 @@ type BuildMetadataInput = {
   path?: string;
   image?: string;
   imageAlt?: string;
+  imageWidth?: number;
+  imageHeight?: number;
   type?: "website" | "article";
   noIndex?: boolean;
+  keywords?: readonly string[];
+  authors?: readonly string[];
+  publishedTime?: string;
+  modifiedTime?: string;
+  section?: string;
+  tags?: readonly string[];
 };
 
 export function buildMetadata({
@@ -17,15 +25,41 @@ export function buildMetadata({
   path = "/",
   image = "/og/chef-mani-bista.jpg",
   imageAlt = "Chef Mani Bista — private chef in Kathmandu, Nepal, and India",
+  imageWidth = 1200,
+  imageHeight = 630,
   type = "website",
   noIndex = false,
+  keywords,
+  authors,
+  publishedTime,
+  modifiedTime,
+  section,
+  tags,
 }: BuildMetadataInput): Metadata {
   const url = new URL(path, siteConfig.url).toString();
   const imageUrl = new URL(image, siteConfig.url).toString();
 
+  const openGraphBase = {
+    title,
+    description,
+    url,
+    siteName: siteConfig.name,
+    locale: "en_US",
+    images: [
+      {
+        url: imageUrl,
+        width: imageWidth,
+        height: imageHeight,
+        alt: imageAlt,
+      },
+    ],
+  };
+
   return {
     title: { absolute: title },
     description,
+    keywords: keywords ? [...keywords] : undefined,
+    authors: authors?.map((name) => ({ name })),
     alternates: {
       canonical: url,
     },
@@ -42,22 +76,21 @@ export function buildMetadata({
             "max-video-preview": -1,
           },
         },
-    openGraph: {
-      type,
-      title,
-      description,
-      url,
-      siteName: siteConfig.name,
-      locale: "en_US",
-      images: [
-        {
-          url: imageUrl,
-          width: 1200,
-          height: 630,
-          alt: imageAlt,
-        },
-      ],
-    },
+    openGraph:
+      type === "article"
+        ? {
+            ...openGraphBase,
+            type: "article",
+            publishedTime,
+            modifiedTime,
+            authors: authors ? [...authors] : undefined,
+            section,
+            tags: tags ? [...tags] : undefined,
+          }
+        : {
+            ...openGraphBase,
+            type: "website",
+          },
     twitter: {
       card: "summary_large_image",
       title,
